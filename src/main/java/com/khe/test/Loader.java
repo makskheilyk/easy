@@ -2,6 +2,7 @@ package com.khe.test;
 
 import org.apache.log4j.Logger;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -35,6 +36,9 @@ public class Loader {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(countPage);
 
         List<Future<String>> results = new ArrayList<>();
+
+        File myPath = new File("pages/");
+        myPath.mkdir();
 
         for (int i = 0; i < countPage; i++)
         {
